@@ -55,7 +55,7 @@ public class ServerEventsHandler {
                         if (!MiscHelper.isListValid(configObject.getArgs())) return;
                         if (Args.executeConditions(player, target, configObject.getConditions(), CONFIG)) {
                             for (SimpleArgProvider args : configObject.getArgs()) {
-                                Args.execute(player, target, args, CONFIG);
+                                Args.executeEntity(player, target, args, CONFIG);
                             }
                         }
                     }
@@ -100,7 +100,7 @@ public class ServerEventsHandler {
                     if (!MiscHelper.isListValid(configObject.getArgs())) return;
                     if (Args.executeConditions(player, target, configObject.getConditions(), CONFIG)) {
                         for (SimpleArgProvider args : configObject.getArgs()) {
-                            Args.execute(player, target, args, CONFIG);
+                            Args.executeEntity(player, target, args, CONFIG);
                         }
                     }
                 }

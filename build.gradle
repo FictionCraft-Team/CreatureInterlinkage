@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '${versions}'
+version = "${versions}"
 group = 'fictioncraft.wintersteve25.cil' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'cil'
 
@@ -82,7 +82,7 @@ repositories {
 
 dependencies {
     minecraft 'net.minecraftforge:forge:1.16.5-36.2.0'
-    compile fg.deobf("curse.maven:fclib-497404:3459859")
+    compile fg.deobf("curse.maven:fclib-497404:3475183")
     compile fg.deobf("curse.maven:champions-307152:3311119")
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.4:7.6.1.65")
     compileOnly fg.deobf("mezz.jei:jei-1.16.4:7.6.1.65:api")
@@ -95,7 +95,7 @@ jar {
         attributes([
             "Specification-Title": "cil",
             "Specification-Vendor": "cilsareus",
-            "Specification-Version": "${versions}", // We are version 1 of ourselves
+            "Specification-Version": "${version}", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"cilsareus",

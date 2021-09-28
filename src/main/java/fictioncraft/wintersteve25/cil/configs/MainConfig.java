@@ -29,7 +29,7 @@ public class MainConfig implements IJsonConfig {
 
     public SimpleCILMap configData;
 
-    private static final SimpleCILConfigObject ENTITY_CONFIG_OBJECT = new SimpleCILConfigObject(new SimpleEntityProvider("minecraft:enderman", false), new FCList<SimpleArgProvider>().addContent(new SimpleItemCondition(new SimpleItemProvider("minecraft:iron_ingot", 1, "", false), JsonUtils.JsonHandTypes.DEFAULT)), new FCList<SimpleArgProvider>().addContent(new SimpleSwingHandArg(JsonUtils.JsonHandTypes.MAIN)));
+    private static final SimpleCILConfigObject ENTITY_CONFIG_OBJECT = new SimpleCILConfigObject(new SimpleEntityProvider("minecraft:enderman", false), new FCList<SimpleArgProvider>().addContent(new SimpleItemCondition(new SimpleItemProvider("minecraft:iron_ingot", 1, "", false), JsonUtils.JsonHandTypes.DEFAULT, false)), new FCList<SimpleArgProvider>().addContent(new SimpleSwingHandArg(JsonUtils.JsonHandTypes.MAIN)));
 
     private final File configFile = getDefaultFile();
     private final File exampleFile = getDefaultExample();

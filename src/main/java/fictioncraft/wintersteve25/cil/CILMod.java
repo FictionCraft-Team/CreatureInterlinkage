@@ -20,7 +20,6 @@ public class CILMod {
         MinecraftForge.EVENT_BUS.addListener(ServerEventsHandler::registerConfig);
         MinecraftForge.EVENT_BUS.addListener(ServerEventsHandler::onJsonReload);
         MinecraftForge.EVENT_BUS.addListener(ServerEventsHandler::entityLeftClick);
-//        MinecraftForge.EVENT_BUS.addListener(ServerEventsHandler::entityRightClick);
         MinecraftForge.EVENT_BUS.addListener(ServerEventsHandler::entityRightClickSpecific);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(ArgRegistration::commonSetUp);
     }

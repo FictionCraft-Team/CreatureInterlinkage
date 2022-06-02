@@ -13,7 +13,6 @@ import fictioncraft.wintersteve25.fclib.api.json.objects.providers.arg.template.
 import fictioncraft.wintersteve25.fclib.api.json.objects.providers.obj.templates.SimpleEntityProvider;
 import fictioncraft.wintersteve25.fclib.api.json.objects.providers.obj.templates.SimpleItemProvider;
 import fictioncraft.wintersteve25.fclib.api.json.utils.JsonUtils;
-import fictioncraft.wintersteve25.fclib.common.base.FCList;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
@@ -29,7 +28,15 @@ public class MainConfig implements IJsonConfig {
 
     public SimpleCILMap configData;
 
-    private static final SimpleCILConfigObject ENTITY_CONFIG_OBJECT = new SimpleCILConfigObject(new SimpleEntityProvider("minecraft:enderman", false), new FCList<SimpleArgProvider>().addContent(new SimpleItemCondition(new SimpleItemProvider("minecraft:iron_ingot", 1, "", false), JsonUtils.JsonHandTypes.DEFAULT, false)), new FCList<SimpleArgProvider>().addContent(new SimpleSwingHandArg(JsonUtils.JsonHandTypes.MAIN)));
+    private static final SimpleCILConfigObject ENTITY_CONFIG_OBJECT;
+
+    static {
+        List<SimpleArgProvider> conditions = new ArrayList<>();
+        conditions.add(new SimpleItemCondition(new SimpleItemProvider("minecraft:iron_ingot", 1, "", false), JsonUtils.JsonHandTypes.DEFAULT, false));
+        List<SimpleArgProvider> args = new ArrayList<>();
+        args.add(new SimpleSwingHandArg(JsonUtils.JsonHandTypes.MAIN));
+        ENTITY_CONFIG_OBJECT = new SimpleCILConfigObject(new SimpleEntityProvider("minecraft:enderman", false), conditions, args);
+    }
 
     private final File configFile = getDefaultFile();
     private final File exampleFile = getDefaultExample();

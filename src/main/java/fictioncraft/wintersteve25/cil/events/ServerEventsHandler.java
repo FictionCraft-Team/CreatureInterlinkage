@@ -55,7 +55,7 @@ public class ServerEventsHandler {
                         if (!MiscHelper.isListValid(configObject.getArgs())) return;
                         if (Args.executeConditions(player, target, configObject.getConditions(), CONFIG)) {
                             for (SimpleArgProvider args : configObject.getArgs()) {
-                                Args.executeEntity(player, target, args, CONFIG);
+                                Args.executeFromEntity(player, target, args, CONFIG);
                             }
                         }
                     }
@@ -63,20 +63,6 @@ public class ServerEventsHandler {
             }
         }
     }
-
-//    public static void entityRightClick(PlayerInteractEvent.EntityInteract event) {
-//        if (configMap == null || !MiscHelper.isMapValid(configMap.getConfigurations())) return;
-//        rightClick = configMap.getConfigurations().get(CILMod.RIGHT_CLICK);
-//
-//        PlayerEntity player = event.getPlayer();
-//        if (basicChecks(rightClick, player)) {
-//            if (event.getHand() == Hand.MAIN_HAND) {
-//                ItemStack heldItem = player.getHeldItem(player.getActiveHand());
-//                Entity target = event.getTarget();
-//                entityRightClickResult(player, target, heldItem);
-//            }
-//        }
-//    }
 
     public static void entityRightClickSpecific(PlayerInteractEvent.EntityInteractSpecific event) {
         if (configMap == null || !MiscHelper.isMapValid(configMap.getConfigurations())) return;
@@ -100,7 +86,7 @@ public class ServerEventsHandler {
                     if (!MiscHelper.isListValid(configObject.getArgs())) return;
                     if (Args.executeConditions(player, target, configObject.getConditions(), CONFIG)) {
                         for (SimpleArgProvider args : configObject.getArgs()) {
-                            Args.executeEntity(player, target, args, CONFIG);
+                            Args.executeFromEntity(player, target, args, CONFIG);
                         }
                     }
                 }
